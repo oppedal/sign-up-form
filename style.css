@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;500;700&display=swap');
+:root {
+  font-family: 'Mukta', sans-serif;
+  --light: 300;
+  --medium: 500;
+  --heavy: 700;
+
+  --main: #d1f3f6;
+  --accent: #39a5d4;
+  --red: #f34538;
+  --dark: #5d6879;
+}
+body {
+  background-color: var(--main);
+  color: var(--accent);
+  background-image: url(/img/Bg.svg);
+  background-size: 100%;
+  object-fit: cover;
+  /* height: 100%; */
+}
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+button {
+  border-radius: 100px;
+  border: none;
+  width: 100px;
+  height: 100px;
+  color: var(--accent);
+  background-color: var(--main);
+}
+.rotate {
+  position: absolute;
+  left: -115px;
+  bottom: 350px;
+}
+h1 {
+  position: relative;
+  font-weight: 700;
+  font-size: 4rem;
+  transform: rotate(-90deg);
+}
+h3 {
+  color: var(--main);
+  font-weight: var(--medium);
+}
+input {
+  background-color: var(--main);
+  border: 1px solid var(--accent);
+}
+.container {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  grid-template-rows: 0.6fr repeat(6, 0.5fr) 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+  height: 100vh;
+}
+.first--name {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.last--name {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.email {
+  grid-area: 4 / 2 / 5 / 3;
+}
+.phone {
+  grid-area: 5 / 2 / 6 / 3;
+}
+.password {
+  grid-area: 6 / 2 / 7 / 3;
+}
+.confirm--password {
+  grid-area: 7 / 2 / 8 / 3;
+}
+.header {
+  grid-area: 2 / 1 / 8 / 2;
+}
+.top {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.footer {
+  gap: 0.5rem;
+  grid-area: 8 / 1 / 9 / 3;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+form.confirm--password {
+  color: var(--main);
+}
+.bg--img {
+  z-index: -100;
+  grid-area: 1 / 1 / 9 / 3;
+}
