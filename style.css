@@ -13,9 +13,7 @@
 body {
   background-color: var(--main);
   color: var(--accent);
-  background-image: url(/img/Bg.svg);
-  background-size: 100%;
-  object-fit: cover;
+
   /* height: 100%; */
 }
 a {
@@ -50,6 +48,10 @@ input {
   border: 1px solid var(--accent);
 }
 .container {
+  background-image: url(/img/Bg.svg);
+  background-size: 100%;
+
+  object-fit: cover;
   display: grid;
   grid-template-columns: 0.4fr 1fr;
   grid-template-rows: 0.6fr repeat(6, 0.5fr) 1fr;
@@ -88,7 +90,9 @@ input {
   flex-direction: column;
   margin-left: 5rem;
 }
-
+form label {
+  text-transform: uppercase;
+}
 form div {
   display: flex;
   flex-direction: column;
