@@ -6,6 +6,7 @@
   --heavy: 700;
 
   --main: #d1f3f6;
+  --link: #7bc950;
   --accent: #39a5d4;
   --red: #f34538;
   --dark: #5d6879;
@@ -13,12 +14,16 @@
 body {
   background-color: var(--main);
   color: var(--accent);
+  background-image: url(/img/Bg.svg);
+  background-size: 100%;
+
+  object-fit: cover;
 
   /* height: 100%; */
 }
 a {
   text-decoration: none;
-  color: var(--dark);
+  color: var(--link);
 }
 button {
   border-radius: 100px;
@@ -28,6 +33,7 @@ button {
   color: var(--accent);
   background-color: var(--main);
 }
+
 .rotate {
   position: absolute;
   left: -115px;
@@ -40,18 +46,23 @@ h1 {
   transform: rotate(-90deg);
 }
 h3 {
-  color: var(--main);
+  color: var(--dark);
   font-weight: var(--medium);
+}
+@media screen and (min-width: 616px) {
+  button {
+    background-color: var(--accent);
+    color: var(--main);
+  }
+  .rotate {
+    bottom: 500px;
+  }
 }
 input {
   background-color: var(--main);
   border: 1px solid var(--accent);
 }
 .container {
-  background-image: url(/img/Bg.svg);
-  background-size: 100%;
-
-  object-fit: cover;
   display: grid;
   grid-template-columns: 0.4fr 1fr;
   grid-template-rows: 0.6fr repeat(6, 0.5fr) 1fr;
@@ -90,6 +101,7 @@ input {
   flex-direction: column;
   margin-left: 5rem;
 }
+
 form label {
   text-transform: uppercase;
 }
@@ -98,9 +110,63 @@ form div {
   flex-direction: column;
 }
 form.confirm--password {
-  color: var(--main);
+  color: var(--dark);
 }
+@media screen and (min-width: 608px) {
+  form.confirm--password {
+    color: var(--accent);
+  }
+}
+
 .bg--img {
   z-index: -100;
   grid-area: 1 / 1 / 9 / 3;
+}
+@media screen and (min-width: 900px) {
+  .container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 0.4fr repeat(2, minmax(auto, 337px)) 0.4fr;
+    grid-template-rows: 1fr repeat(3, 0.5fr) 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+  }
+  .first--name {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .last--name {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .email {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .phone {
+    grid-area: 3 / 3 / 4 / 4;
+  }
+  .password {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+  .confirm--password {
+    grid-area: 4 / 3 / 5 / 4;
+  }
+  .header {
+    grid-area: 2 / 1 / 5 / 2;
+  }
+  .top {
+    grid-area: 1 / 1 / 2 / 5;
+  }
+  .footer {
+    gap: 0.5rem;
+    grid-area: 5 / 1 / 6 / 5;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+  }
+  form div {
+    margin-top: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: left;
+  }
 }
